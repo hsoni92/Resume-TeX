@@ -1,8 +1,12 @@
 ## Resume-TeX
-Resume built in LuaLatex format
+Resume built with Latex
 
-## Download MikTex to edit:
+## Download MikTex to edit
 https://miktex.org/download
 
-## Requirements and Compilation
-LuaLatex / pdfLatex format
+## Online Editor
+https://www.overleaf.com/login
+Download the zip archive and import directly to overleaf projects
+
+## Compilation Format
+LuaLatex / pdfLatex
