@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>mmayer.bcf</file>
+      <file>resume.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>mmayer.bbl</file>
+      <file>resume.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -66,19 +66,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>mmayer</infile>
+      <infile>resume</infile>
     </cmdline>
     <input>
-      <file>mmayer.bcf</file>
+      <file>resume.bcf</file>
     </input>
     <output>
-      <file>mmayer.bbl</file>
+      <file>resume.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>mmayer.bbl</file>
+      <file>resume.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>mmayer.bcf</file>
+      <file>resume.bcf</file>
     </requires>
     <requires type="editable">
       <file>sample.bib</file>

@@ -41,15 +41,23 @@
   \usepackage[T1]{fontenc}
   \usepackage[default]{lato}
 \fi
+\usepackage{hyperref}
 
 % Change the colours if you want to
 \definecolor{VividPurple}{HTML}{247392}
 \definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightBlue}{HTML}{03A9F4}
 \definecolor{LightGrey}{HTML}{2E2E2E}
 \colorlet{heading}{VividPurple}
 \colorlet{accent}{VividPurple}
 \colorlet{emphasis}{SlateGrey}
 \colorlet{body}{LightGrey}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=LightBlue,
+  urlcolor=LightBlue
+}
 
 % Change the bullets for itemize and rating marker
 % for \cvskill if you want to
@@ -110,13 +118,13 @@
 
 \cvsection{SKILLS}
 
-\cvskill{HTML, CSS, JavaScript, JQuery, PHP, SQL}{5}
-\cvskill{Python, GraphQL}{3}
-\cvskill{C, C++, Java}{2}
-\cvskill{NodeJS, ReactJS, Webpack, Docker}{5}
+\cvskill{NodeJS, ReactJS, Webpack}{5}
+\cvskill{HTML, CSS/LESS, JavaScript, JQuery, PHP, SQL}{5}
 \cvskill{Jest, Jasmine, Selenium, Puppeteer}{4}
-\cvskill{Shell Scripting}{4}
-\cvskill{Adobe XD}{4}
+\cvskill{AWS, Kubernetes, Docker}{3}
+\cvskill{Shell Scripting}{5}
+\cvskill{Python, GraphQL}{3}
+\cvskill{Adobe XD, Figma}{3}
 \cvskill{Adobe Photshop, Adobe Illustrator}{5}
 \cvskill{GitHub, Postman}{4}
 
@@ -138,9 +146,13 @@ Automation using python-selenium, python based propriety framework and Windows P
 \newline
 A Deep Learning Platform for Data Scientists for running/managing datasets and models built with ReactJS | Mar. 2018 - Nov. 2018
 \smallskip
-\item \textbf{Artemis Cluster}
+\item \textbf{Lazarus Deployer (Self Indulged Project)}
 \newline
-A Dropbox Cluster Manager for deploying n-number of dropbox syncs in a linux based environment. Built using ReactJS, NodeJS, Docker and REST API | Feb. 2019 - PRESENT
+A one click shared hosting migration WebApp. Built using ReactJS, NodeJS, PHP, REST API, Telegram Bot API, Dropbox API | Mar. 2021 - PRESENT
+\smallskip
+\item \textbf{Artemis Cluster (Self Indulged Project)}
+\newline
+A Dropbox Cluster Manager for deploying n-number of dropbox syncs in a linux based environment. Built using ReactJS, NodeJS, Docker , REST API and Dropbox API | Feb. 2019 - PRESENT
 \smallskip
 \item  \textbf{Automated Compute Infrastructure for Organizations using\newline OpenStack}
 \newline
