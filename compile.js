@@ -1,6 +1,22 @@
 const spawn = require('child_process').spawn;
 const pdflatex = spawn('pdflatex', ['-output-directory', './', 'resume.tex']);
 
+const fs = require('fs').promises;
+
+// Source and destination paths
+const sourcePath = './resume.pdf';
+const destinationPath = './Himanshu-Soni-Resume.pdf';
+
+// Copy file using async/await
+async function copyFile() {
+  try {
+    await fs.copyFile(sourcePath, destinationPath);
+    console.log('File copied successfully');
+  } catch (err) {
+    console.error('Error copying file:', err);
+  }
+}
+
 // Capture stdout (standard output)
 pdflatex.stdout.on('data', (data) => {
     // enable if verbose is needed
@@ -21,6 +37,7 @@ pdflatex.on('error', (err) => {
 pdflatex.on('exit', function (code) {
     if (code === 0) {
         console.log(`successfully generated resume.pdf from resume.tex`);
+        copyFile();
     } else {
         console.log('Child process exited with code ' + code);
     }
