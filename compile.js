@@ -11,7 +11,7 @@ const destinationPath = './Himanshu-Soni-Resume.pdf';
 async function copyFile() {
   try {
     await fs.copyFile(sourcePath, destinationPath);
-    console.log('File copied successfully');
+    console.log(`copied named resume as ${destinationPath.replace('./', '')}`);
   } catch (err) {
     console.error('Error copying file:', err);
   }
@@ -36,7 +36,7 @@ pdflatex.on('error', (err) => {
 // Handle exit event
 pdflatex.on('exit', function (code) {
     if (code === 0) {
-        console.log(`successfully generated resume.pdf from resume.tex`);
+        console.log(`successfully generated ${sourcePath.replace('./', '')}`);
         copyFile();
     } else {
         console.log('Child process exited with code ' + code);

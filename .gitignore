@@ -2,3 +2,5 @@ node_modules
 *.log
 *.out
 *.aux
+*.bcf
+*.run.xml

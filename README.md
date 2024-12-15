@@ -6,7 +6,7 @@ LuaLatex / pdfLatex
 
 # Compilation Guide
 
-## Linux/MAC OS
+## Linux / MAC OS
 #### Requirements
 1. Node JS
 2. pdflatex
