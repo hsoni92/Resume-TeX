@@ -8,7 +8,8 @@ LuaLatex / pdfLatex
 
 ## Linux/MAC OS
 #### Requirements
-Node JS, pdflatex
+1. Node JS
+2. pdflatex
 
 `npm run build`
 
