@@ -11,6 +11,7 @@ LuaLatex / pdfLatex
 1. Node JS
 2. pdflatex
 
+#### Compile using
 `npm run build`
 
 
