@@ -1,0 +1,2 @@
+Mac OS
+brew install --cask mactex
