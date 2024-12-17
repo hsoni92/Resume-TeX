@@ -20,7 +20,7 @@ async function copyFile() {
 // Capture stdout (standard output)
 pdflatex.stdout.on('data', (data) => {
     // enable if verbose is needed
-    // console.log('stdout: ' + data.toString());
+    console.log('stdout: ' + data.toString());
 });
 
 // Capture stderr (standard error)
