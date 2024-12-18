@@ -305,54 +305,48 @@
 }
 \newcommand{\addnextpagesidebar}[2][]{\afterpage{\addsidebar[#1]{#2}}}
 
+
 \newcounter{datetoday}
 \newcounter{diffyears}
 \newcounter{diffmonths}
 \newcounter{diffdays}
 
-% Custom command to get date diff from date of starting work
 
 \newcommand{\difftoday}[3]{%
-    % Get today's date
-    \setmydatenumber{datetoday}{\the\year}{\the\month}{\the\day}%
-
-    % Get the target date
-    \setmydatenumber{diffdays}{#1}{#2}{#3}%
-    \addtocounter{diffdays}{-\thedatetoday}%
-
-    % Determine if the date is in the future or the past
-    \ifnum\value{diffdays}>0
+      \setmydatenumber{datetoday}{\the\year}{\the\month}{\the\day}%
+      \setmydatenumber{diffdays}{#1}{#2}{#3}%
+      \addtocounter{diffdays}{-\thedatetoday}%
+      \ifnum\value{diffdays}>0
         \def\diffbefore{in }%
         \def\diffafter{}%
-    \else
+      \else
         \def\diffbefore{}%
         \def\diffafter{}%
-        % \def\diffafter{ago}%
         \setcounter{diffdays}{-\value{diffdays}}%
-    \fi
-
-    % Convert days to years (floating-point calculation)
-    \FPdiv\resultyears{\the\value{diffdays}}{365}  % Convert days to years (365 days per year)
-    \FPround\resultyears\resultyears{2}  % Round the result to 2 decimal places
-
-    % Calculate remaining days after years
-    \FPmul\tempdays{365}{\resultyears}  % Calculate total days in years
-    \FPsub\remainingdays{\the\value{diffdays}}{\tempdays}  % Subtract full years' days from total days
-
-    % Convert remaining days to months (floating-point calculation)
-    \FPdiv\resultmonths{\remainingdays}{30}  % Convert days to months (assuming 30 days per month)
-    \FPround\resultmonths\resultmonths{0}  % Round months to nearest integer
-
-    % Convert months to fraction of a year
-    \FPdiv\resultfraction{\resultmonths}{12}  % Convert months into fractional years
-
-    % Add years and fractional months together
-    \FPadd\finalresult\resultyears\resultfraction  % Add years and fractional years
-
-    % Output the result
-    % \diffbefore
-    \FPround\finalresult\finalresult{1}  % Round the final result to 1 decimal places
-    \finalresult\space years \diffafter
+      \fi
+      \setcounter{diffyears}{\value{diffdays}/365}%
+      \setcounter{diffdays}{\value{diffdays}-365*\value{diffyears}}%
+      \setcounter{diffmonths}{\value{diffdays}/30}%
+      \setcounter{diffdays}{\value{diffdays}-30*\value{diffmonths}}%
+      %
+      \diffbefore
+      \ifnum\value{diffyears}=0
+      \else
+        \ifnum\value{diffyears}>1
+            \thediffyears\space years,
+        \else
+            \thediffyears\space year,
+        \fi
+      \fi
+      \ifnum\value{diffmonths}=0
+      \else
+        \ifnum\value{diffmonths}>1
+            \thediffmonths\space months
+        \else
+            \thediffmonths\space month
+        \fi
+      \fi
+      \diffafter
 }
 
 \AtBeginDocument{%
