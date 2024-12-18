@@ -330,22 +330,7 @@
       \setcounter{diffdays}{\value{diffdays}-30*\value{diffmonths}}%
       %
       \diffbefore
-      \ifnum\value{diffyears}=0
-      \else
-        \ifnum\value{diffyears}>1
-            \thediffyears\space years,
-        \else
-            \thediffyears\space year,
-        \fi
-      \fi
-      \ifnum\value{diffmonths}=0
-      \else
-        \ifnum\value{diffmonths}>1
-            \thediffmonths\space months
-        \else
-            \thediffmonths\space month
-        \fi
-      \fi
+      \thediffyears .\thediffmonths\space years
       \diffafter
 }
 
